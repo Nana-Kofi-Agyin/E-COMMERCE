@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+        
+            
+            <nav id="navbar">
+                <header>DB Documentation</header>
+           <ol>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#Components" class="nav-link">Components</a></li>
+            <li><a href="#Types" class="nav-link">Types</a></li>
+            <li><a href="#Operations" class="nav-link">Operations</a></li>
+            <li><a href="#Applications" class="nav-link">Applications</a></li>
+           </ol> 
+            </nav>
+        
+   
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>Introduction</header>
+            <p> 
+                A database is an organized collection of data that can be easily accessed, <br>
+                managed, and updated. Databases are essential for storing information and <br>
+                are widely used in software development, business, science, and more.
+            </p><br>
+             <p> They are widely used in every field where structured or unstructured data needs to be handled. </p>
+            
+
+        </section>
+
+        <section id="Components" class="main-section">
+            <header>Components</header>
+            <p><span>Database Management System (DBMS):</span> is software that facilitates the creation, management, and use of databases.</p> <br>
+            <p>It allows users to store, retrieve, update, and delete data efficiently while ensuring data integrity and security.</p><br>
+            <p>    DBMS acts as an intermediary between users and the database, handling data organization, querying, and access control.</p><br>
+            <p>    Common types of DBMS include relational (e.g., MySQL, PostgreSQL) and non-relational (e.g., MongoDB, Cassandra) systems.</p> <br>
+            <p>    Key features include data independence, backup and recovery, concurrency control, and support for transactions.</p> <br>
+            <p>    By centralizing data management, DBMS improves collaboration, scalability, and reliability in applications, from small websites to enterprise systems.</p>
+        </section>
+
+        <section id="Types" class="main-section">
+            <header>Types</header>
+            <p>Databases are categorized based on their structure and usage.</p>
+            <ul class="list">
+                <li><span>Relational databases (SQL)</span>
+                     store data in structured tables with predefined schemas, using SQL for queries (e.g., MySQL, PostgreSQL). 
+                </li>
+                <li>
+                    <span>NoSQL databases</span>
+                    handle unstructured or semi-structured data, offering flexibility and scalability; 
+                    examples include MongoDB (document-based) and Redis (key-value store).
+                </li>
+                <li>
+                    <span>Graph databases </span>
+                    epresent data as nodes and edges, ideal for relationships (e.g., Neo4j).
+                </li>
+            </ul>
+        </section>
+
+        <section id="Operations" class="main-section">
+            <header>Operations</header>
+            <p><span>Databases support key operations for managing data, often referred to as CRUD:</span></p>
+            <ul class="list">
+                <li><span>Create: </span>add new data, like inserting a record</li>
+                <li><span>Read: </span>retrieve data through queries</li>
+                <li><span>Update: </span>modify existing data</li>
+                <li><span>Delect: </span>remove data</li>
+            </ul>
+
+            <p>Example:</p>
+            <code>-- Create a table for storing user information</code>
+            <code>CREATE TABLE users (</code> <br>
+            <code>id INT PRIMARY KEY AUTO_INCREMENT,</code> <br>
+             <code>name VARCHAR(100) NOT NULL,</code> <br>
+             <code>email VARCHAR(255) UNIQUE NOT NULL,</code> <br>
+             <code>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</code> <br>
+            <code>  );</code> <br>
+        </section>
+        
+        <section id="Applications" class="main-section">
+            <header>Applications</header>
+            <p>Databases are essential in various applications to manage and organize data.</p>
+            <ul class="list">
+                <li>In <span>e-commerce</span>, they store product details, customer information, and transaction records.</li>
+                <li><span>Social media platforms</span> use databases to manage user profiles, posts, and connections.</li>
+                <li><span>Healthcare systems</span> rely on databases for patient records, appointments, and medical histories. </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
