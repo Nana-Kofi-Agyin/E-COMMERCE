@@ -1,20 +1,21 @@
 import React from 'react'
-import  ReactDOM from 'react-dom/client'
-import './App.css'
-import Header from '../UI Components/Layout/Header/header.jsx'
-import Footer from '../UI Components/Layout/Footer/footer.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from '../UI Components/Layout/layout.jsx'
+import Home from '../Pages/Home.jsx'
 
-function App() {
-
-
+const App = () => {
   return (
+
     <>
-      <Header />
-      {/* Main content area will go here */}
-      <main className="min-h-screen">
-        {/* Page content will be added here */}
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+
+          <Route element={<Layout />}>
+            <Route path='/' element={<Home />} />
+          </Route>
+          
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
