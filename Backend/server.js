@@ -1,11 +1,18 @@
 const express =  require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+dotenv.config();
+
+
+const PORT = process.env.PORT || 3000;
+
+connectDB(); 
 
 app.get("/", (req,res) => {
     res.send("WELCOME TO DEX API")
@@ -13,4 +20,4 @@ app.get("/", (req,res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
-})
+}) 
