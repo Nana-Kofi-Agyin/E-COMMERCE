@@ -1,0 +1,167 @@
+### Health Check
+GET http://localhost:3000/
+
+### =========================
+### USER / AUTH ENDPOINTS
+### =========================
+
+### Register New User
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Login User
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Get User Profile (requires token)
+GET http://localhost:3000/api/users/profile
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### =========================
+### PRODUCT ENDPOINTS
+### =========================
+
+### Get All Products
+GET http://localhost:3000/api/products
+
+### Get Products with Pagination
+GET http://localhost:3000/api/products?page=1&limit=10
+
+### Get Featured Products
+GET http://localhost:3000/api/products/featured
+
+### Get Single Product by ID
+GET http://localhost:3000/api/products/PRODUCT_ID_HERE
+
+### Create Product (requires admin token)
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+{
+  "name": "Test Product",
+  "description": "This is a test product",
+  "price": 99.99,
+  "category": "Electronics",
+  "stock": 10,
+  "imageUrl": "https://via.placeholder.com/300"
+}
+
+### Update Product (requires admin token)
+PUT http://localhost:3000/api/products/PRODUCT_ID_HERE
+Content-Type: application/json
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+{
+  "name": "Updated Product",
+  "price": 79.99,
+  "stock": 15
+}
+
+### Delete Product (requires admin token)
+DELETE http://localhost:3000/api/products/PRODUCT_ID_HERE
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+### Add Product Review (requires token)
+POST http://localhost:3000/api/products/PRODUCT_ID_HERE/reviews
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "rating": 5,
+  "comment": "Great product!"
+}
+
+### =========================
+### CART ENDPOINTS
+### =========================
+
+### Get User's Cart (requires token)
+GET http://localhost:3000/api/cart
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Add Item to Cart (requires token)
+POST http://localhost:3000/api/cart
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "productId": "PRODUCT_ID_HERE",
+  "quantity": 2
+}
+
+### Update Cart Item (requires token)
+PUT http://localhost:3000/api/cart/CART_ITEM_ID_HERE
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "quantity": 3
+}
+
+### Remove Item from Cart (requires token)
+DELETE http://localhost:3000/api/cart/CART_ITEM_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Clear Cart (requires token)
+DELETE http://localhost:3000/api/cart
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### =========================
+### ORDER ENDPOINTS
+### =========================
+
+### Get User's Orders (requires token)
+GET http://localhost:3000/api/orders
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Get Single Order by ID (requires token)
+GET http://localhost:3000/api/orders/ORDER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Create Order (requires token)
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "items": [
+    {
+      "productId": "PRODUCT_ID_HERE",
+      "quantity": 2,
+      "price": 99.99
+    }
+  ],
+  "shippingAddress": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "USA"
+  },
+  "paymentMethod": "credit_card"
+}
+
+### Update Order Status (requires admin token)
+PUT http://localhost:3000/api/orders/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+{
+  "status": "shipped"
+}
+
+### Cancel Order (requires token)
+DELETE http://localhost:3000/api/orders/ORDER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
