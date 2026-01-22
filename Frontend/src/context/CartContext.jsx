@@ -97,4 +97,13 @@ const CartProvider = ({ children }) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
+export const useCart = () => {
+  const context = React.useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used within CartProvider');
+  }
+  return context;
+};
+
+export { CartProvider };
 export default CartContext;
