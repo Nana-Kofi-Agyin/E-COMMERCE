@@ -32,11 +32,13 @@ header {
     background-color: transparent;
     filter: drop-shadow(10px);
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #b74b4b;
     font-weight: 800;
     cursor: pointer;
@@ -44,7 +46,7 @@ header {
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 nav a {
@@ -60,3 +62,15 @@ nav a:hover, nav a.active {
     color: #b74b4b;
     border-bottom: 3px solid #b74b4b;
 }
+
+@media(max-width:995px){
+   nav{ 
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40px;
+        border-left: 3px solid #b74b4b;
+
+    }
+}
+
